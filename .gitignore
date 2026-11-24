@@ -5,13 +5,12 @@ target/
 *.log
 
 # 本地临时目录与压缩包
-.mysql-download/
-.workbuddy/
-文档.zip
+archive/
+private/
 *.bak
 
 # 保密材料，禁止外传
 课题列表（禁止外传）.xlsx
 
 # 后端遗留旧版 admin（vue2 脚手架残留），与现行 Vue3 双前端无关
-文档/springbootpkh49/src/main/resources/admin/
+backend/src/main/resources/admin/

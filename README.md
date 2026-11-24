@@ -20,32 +20,34 @@
 ## 目录结构
 
 ```
-├── 文档/
-│   ├── front/               # 前台工作台 + 官网（5174）
-│   ├── admin/               # 管理后台（5173）
-│   ├── springbootpkh49/     # SpringBoot 后端（8080）
-│   ├── db.sql               # 数据库结构与演示数据
-│   ├── seed-demo-content.mjs# 演示内容种子（功能介绍文档 + 产品公告）
-│   ├── brand/               # 品牌图标源图
-│   └── 预览截图/             # 各轮改版实测截图
-├── 前端项目运行说明.md        # 环境、启动、打包与部署
-└── UI改版说明.md             # 历轮视觉与功能改版记录
+├── front/                 # 前台工作台 + 官网（5174）
+├── admin/                 # 管理后台（5173）
+├── backend/               # SpringBoot 后端（8080，构件名 springbootpkh49）
+├── database/db.sql        # 建表脚本
+├── scripts/seed-demo-content.mjs  # 演示内容种子（功能介绍文档 + 产品公告）
+├── brand/                 # 品牌图标源图
+├── docs/                  # 说明文档与预览截图
+│   ├── 预览截图/           # 各轮改版实测截图
+│   ├── 前端项目运行说明.md  # 环境、启动、打包与部署
+│   └── UI改版说明.md       # 历轮视觉与功能改版记录
+├── private/               # 保密材料（gitignore，不入库）
+└── archive/               # 原始压缩包存档（gitignore，不入库）
 ```
 
 ## 快速上手
 
-1. MySQL 导入 `文档/db.sql`（库名 `springbootpkh49`，账号 root / 123456，可在 `application.yml` 修改）
+1. MySQL 导入 `database/db.sql`（库名 `springbootpkh49`，账号 root / 123456，可在 `application.yml` 修改）
 2. 后端：IDE 运行启动类，或 `mvn package -DskipTests` 后 `java -jar`（端口 8080）
-3. 前台：`cd 文档/front && npm i && npm run dev` → http://localhost:5174
-4. 后台：`cd 文档/admin && npm i && npm run dev` → http://localhost:5173（账号 abo / abo）
-5. 可选：`node 文档/seed-demo-content.mjs` 重放功能介绍演示内容
+3. 前台：`cd front && npm i && npm run dev` → http://localhost:5174
+4. 后台：`cd admin && npm i && npm run dev` → http://localhost:5173（账号 abo / abo）
+5. 可选：`node scripts/seed-demo-content.mjs` 重放功能介绍演示内容
 
 ## 预览
 
-![官网首屏](文档/预览截图/09-墨页官网首屏.png)
+![官网首屏](docs/预览截图/09-墨页官网首屏.png)
 
-![工作台概览](文档/预览截图/14-概览功能文档.png)
+![工作台概览](docs/预览截图/14-概览功能文档.png)
 
-![暗色模式](文档/预览截图/08-暗色模式.png)
+![暗色模式](docs/预览截图/08-暗色模式.png)
 
-更多界面见 `文档/预览截图/`，设计与改版细节见 [UI改版说明.md](UI改版说明.md)。
+更多界面见 `docs/预览截图/`，设计与改版细节见 [UI改版说明.md](docs/UI改版说明.md)。

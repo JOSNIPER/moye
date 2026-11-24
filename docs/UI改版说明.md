@@ -38,7 +38,7 @@
 
 ## ⭐⭐⭐⭐⭐⭐ 2026-11-24 第五轮：用户图标接入 + 品牌更名「墨页」
 
-- **图标**：改用用户提供的成品图标（薄荷圆角底 + 折角页文档 + 环绕轨道 + 云上传徽章），System.Drawing 高质量缩放生成 16/32/48/180 PNG + PNG-payload ICO + SVG 包装（内嵌 180px 位图），覆盖 front/admin 两项目 `public/` 全套 favicon；所有 Logo 引用点与标签页 favicon 同步。**同日二次更新**：用户再传修订版源图（CDN 下发为 WebP 容器，System.Drawing 不可解码），改由浏览器 canvas 解码导出四档 PNG 后重建 ICO/SVG 全套覆盖；源图存 `文档/brand/logo-source.webp`。
+- **图标**：改用用户提供的成品图标（薄荷圆角底 + 折角页文档 + 环绕轨道 + 云上传徽章），System.Drawing 高质量缩放生成 16/32/48/180 PNG + PNG-payload ICO + SVG 包装（内嵌 180px 位图），覆盖 front/admin 两项目 `public/` 全套 favicon；所有 Logo 引用点与标签页 favicon 同步。**同日二次更新**：用户再传修订版源图（CDN 下发为 WebP 容器，System.Drawing 不可解码），改由浏览器 canvas 解码导出四档 PNG 后重建 ICO/SVG 全套覆盖；源图存 `brand/logo-source.webp`。
 - **隐患修复**：静态 `src="/favicon.svg"` 被 plugin-vue 转成资产 import，命中 dev 服务器启动期内联缓存（旧标 data-uri）；全部改为动态 `:src="'/favicon.svg'"` 绕开编译期 import，dev/build 均直连 public 新图。
 - **品牌更名（用户确认）**：墨绿文档 → **墨页**。覆盖：两项目 `index.html` title、front 路由 meta title、官网导航/hero 大标题/主胶囊文案/链路副文/页脚品牌与 © 与描边大字、概览黑色收尾品牌与描边字、工作台顶栏、后台侧栏「墨页 · 管理后台」与登录页 alt；说明文档品牌词同步替换。
 - **两字排版适配**：官网描边大字 150→190px（字距 10px）、概览描边字 72→96px，窄屏断点同步放大，保证两字品牌在超大字号下的版面张力。
@@ -68,7 +68,7 @@
 - 官网落地页保持亮色（营销页不随工作台换肤）。
 
 ### 验证
-菜单开合、三项设置逐一实测（暗色换肤截图、reduce-motion body 类、默认列表视图进 docs 生效）、localStorage 持久化与刷新恢复、暗色下概览/阅读页逐屏截图；`npm run build` 成功。成果图 `文档/预览截图/07-设置菜单.png / 08-暗色模式.png`。
+菜单开合、三项设置逐一实测（暗色换肤截图、reduce-motion body 类、默认列表视图进 docs 生效）、localStorage 持久化与刷新恢复、暗色下概览/阅读页逐屏截图；`npm run build` 成功。成果图 `docs/预览截图/07-设置菜单.png / 08-暗色模式.png`。
 > 排查记录：bu 页层截图曾持续不显示 popover（DOM/计算样式均可见），滚动后才入镜——属截图缓存层问题，非应用缺陷；菜单在真实渲染中正常。
 
 ---
@@ -94,7 +94,7 @@
 - 胶囊按钮全局 `white-space: nowrap`，修复窄顶栏换行；快捷入口改 2×2 横排防挤字。
 
 ### 验证
-六页逐屏浏览器截图确认（概览含 marquee/数据条/黑收尾、文档中心 stagger 卡片、阅读页胶囊操作条与薄荷引用、编辑页黑保存胶囊）；`npm run build` 成功。成果图见 `文档/预览截图/04-工作台概览.png / 05-文档中心.png / 06-阅读页.png`。
+六页逐屏浏览器截图确认（概览含 marquee/数据条/黑收尾、文档中心 stagger 卡片、阅读页胶囊操作条与薄荷引用、编辑页黑保存胶囊）；`npm run build` 成功。成果图见 `docs/预览截图/04-工作台概览.png / 05-文档中心.png / 06-阅读页.png`。
 
 ---
 
