@@ -21,15 +21,19 @@ request.interceptors.request.use(
 )
 
 // 响应拦截器：后端无论成功失败都返回 HTTP 200，业务码在 body 的 code 里
+let lastExpiredAt = 0
 request.interceptors.response.use(
   (response) => {
     const res = response.data
-    // 未登录（后端返回 code:401）
+    // 未登录（后端返回 code:401）；并发请求同时 401 时只提示/跳转一次
     if (res.code === 401) {
       localStorage.removeItem('token')
       localStorage.removeItem('userInfo')
-      ElMessage.error('登录已过期，请重新登录')
-      router.push('/login')
+      if (Date.now() - lastExpiredAt > 3000) {
+        lastExpiredAt = Date.now()
+        ElMessage.error('登录已过期，请重新登录')
+      }
+      if (router.currentRoute.value.path !== '/login') router.push('/login')
       return Promise.reject(new Error('请先登录'))
     }
     // 业务失败（code 非 0）

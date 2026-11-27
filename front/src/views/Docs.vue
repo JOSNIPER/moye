@@ -158,7 +158,8 @@ async function loadData() {
   loading.value = true
   try {
     const params = { page: query.page, limit: query.limit, sidx: sortField.value, order: ascending.value ? 'ASC' : 'DESC' }
-    if (keyword.value) params.wendangmingcheng_like = keyword.value
+    // 后端 likeOrEq 约定：值含 % 才是 LIKE 模糊匹配（_like 后缀不被解析）
+    if (keyword.value) params.wendangmingcheng = `%${keyword.value}%`
     if (route.query.type) params.leixing = route.query.type
     if (route.query.xiangmu) params.xiangmu = route.query.xiangmu
     const res = await wendangApi.page(params)

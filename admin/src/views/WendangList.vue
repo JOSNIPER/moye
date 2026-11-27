@@ -221,8 +221,8 @@ async function loadData() {
   loading.value = true
   try {
     const params = { page: query.page, limit: query.limit }
-    // 后端约定：字段名带 _like 后缀才是模糊匹配，名称搜索必须加，类型筛选保持精确匹配
-    if (query.wendangmingcheng) params.wendangmingcheng_like = query.wendangmingcheng
+    // 后端 likeOrEq 约定：值含 % 才是 LIKE 模糊匹配（_like 后缀不被解析），类型筛选保持精确匹配
+    if (query.wendangmingcheng) params.wendangmingcheng = `%${query.wendangmingcheng}%`
     if (query.leixing) params.leixing = query.leixing
     const res = await wendangApi.page(params)
     tableData.value = res.data?.list || []
