@@ -5,7 +5,7 @@ const BASE = 'http://localhost:8080/springbootpkh49'
 
 const DOCS = [
   {
-    id: 51, wendangmingcheng: '墨页平台总览', leixing: '在线文档', xiangmu: '产品手册', fujian: '',
+    id: 1, wendangmingcheng: '墨页平台总览', leixing: '在线文档', xiangmu: '产品手册', fujian: '',
     wendangjieshao: '平台定位、技术架构与设计语言总览。',
     neirong: `<p>墨页是一个轻量在线文档管理平台：写作、管理、沉淀与分享，一个工作台就够了。</p>
 <h2>定位</h2>
@@ -16,7 +16,7 @@ const DOCS = [
 <p>浅色极简底、薄荷绿主色，黑胶囊主按钮、超大黑标题与薄荷网格面板；工作台与官网共用同一套视觉基因，并支持真暗色模式。</p>`
   },
   {
-    id: 52, wendangmingcheng: '在线写作与阅读', leixing: '在线文档', xiangmu: '产品手册',
+    id: 2, wendangmingcheng: '在线写作与阅读', leixing: '在线文档', xiangmu: '产品手册',
     wendangjieshao: '富文本与 Markdown 双引擎写作、纸张式阅读体验说明。',
     neirong: `<p>工作台提供富文本与 Markdown 两种写作形态，写完即存，存完即可在文档中心检索与阅读。</p>
 <h2>写作</h2>
@@ -26,7 +26,7 @@ const DOCS = [
 <blockquote>写完即沉淀，沉淀即可查——这是墨页的核心循环。</blockquote>`
   },
   {
-    id: 53, wendangmingcheng: 'Markdown 全链路', leixing: '在线文档', xiangmu: '产品手册',
+    id: 3, wendangmingcheng: 'Markdown 全链路', leixing: '在线文档', xiangmu: '产品手册',
     wendangjieshao: 'Markdown 导入、编辑、预览、下载四段全链路说明。',
     neirong: `<p>Markdown 在墨页是一等公民：导入、编辑、预览、下载四段全部打通。</p>
 <h2>导入</h2>
@@ -37,7 +37,7 @@ const DOCS = [
 <p>一键导出当前内容为 .md 文件，文件名与文档名一致，离开平台也能在其他工具里继续使用。</p>`
   },
   {
-    id: 55, wendangmingcheng: '历史版本与恢复', leixing: '在线文档', xiangmu: '产品手册',
+    id: 4, wendangmingcheng: '历史版本与恢复', leixing: '在线文档', xiangmu: '产品手册',
     wendangjieshao: '保存自动快照、50 版上限与恢复机制说明。',
     neirong: `<p>每次保存都会生成快照，每次误改都有后悔药。</p>
 <h2>自动快照</h2>
@@ -48,7 +48,7 @@ const DOCS = [
 <ul><li>误删大段内容，想找回上一版；</li><li>对比两次修改的措辞差异；</li><li>多人改乱后回退到稳定版本。</li></ul>`
   },
   {
-    id: 56, wendangmingcheng: '项目分类与检索', leixing: '在线文档', xiangmu: '产品手册',
+    id: 5, wendangmingcheng: '项目分类与检索', leixing: '在线文档', xiangmu: '产品手册',
     wendangjieshao: '项目聚合、格式筛选与全局搜索说明。',
     neirong: `<p>文档可以归属项目，跨格式聚合，一次筛选直达全部。</p>
 <h2>项目分类</h2>
@@ -59,7 +59,7 @@ const DOCS = [
 <p>后台文档列表提供项目列与搜索框，可批量维护归属与简介，前台聚合始终准确。</p>`
   },
   {
-    id: 1795497326078, wendangmingcheng: '附件管理与格式支持', leixing: '在线文档', xiangmu: '产品手册',
+    id: 12, wendangmingcheng: '附件管理与格式支持', leixing: '在线文档', xiangmu: '产品手册',
     wendangjieshao: 'Office 附件上传、拖拽与下载支持说明。',
     neirong: `<p>离线文件也是文档资产：墨页为 Office 附件提供统一上传、归档与下载。</p>
 <h2>支持格式</h2>
@@ -70,7 +70,7 @@ const DOCS = [
 <p>附件文档在阅读页提供原文件下载；在线正文与附件可共存，正文用于快速浏览，附件用于深度阅读。</p>`
   },
   {
-    id: 1795497326184, wendangmingcheng: '外观与个性化设置', leixing: '在线文档', xiangmu: '产品手册',
+    id: 13, wendangmingcheng: '外观与个性化设置', leixing: '在线文档', xiangmu: '产品手册',
     wendangjieshao: '设置菜单、真暗色模式与本地持久化说明。',
     neirong: `<p>右上角齿轮不再是后台直达入口，而是一个即开即合的设置菜单。</p>
 <h2>设置菜单</h2>
@@ -79,41 +79,41 @@ const DOCS = [
 <p>全部设置写入 localStorage，下次打开自动恢复；主胶囊按钮随主题黑白反转，亮暗两态都保证对比度。</p>`
   },
   // 附件文档：保留原文件，仅重写标题与简介为格式示例
-  { id: 1617346475916, wendangmingcheng: 'PPT 格式上传示例', wendangjieshao: '演示演示文稿上传、类型徽章与下载链路；附件为通用模板文件。' },
-  { id: 1617346475917, wendangmingcheng: 'Word 格式上传示例', wendangjieshao: '演示 Word 上传与在线正文共存；附件为通用手册文件。' },
-  { id: 1617346475918, wendangmingcheng: 'Word 拖拽导入示例', wendangjieshao: '演示拖拽 .docx 自动建档与首版历史；附件为通用指引文件。' },
-  { id: 1617346475919, wendangmingcheng: 'PPT 拖拽导入示例', wendangjieshao: '演示拖拽 .pptx 自动建档与格式徽章；附件为通用汇报文件。' },
-  { id: 1617346475920, wendangmingcheng: 'Excel 格式上传示例', wendangjieshao: '演示表格附件归档与下载；附件为通用台账文件。' },
-  { id: 1617346475921, wendangmingcheng: 'Excel 检索筛选示例', wendangjieshao: '演示附件文档参与搜索与类型筛选；附件为通用名单文件。' }
+  { id: 6, wendangmingcheng: 'PPT 格式上传示例', wendangjieshao: '演示演示文稿上传、类型徽章与下载链路；附件为通用模板文件。' },
+  { id: 7, wendangmingcheng: 'Word 格式上传示例', wendangjieshao: '演示 Word 上传与在线正文共存；附件为通用手册文件。' },
+  { id: 8, wendangmingcheng: 'Word 拖拽导入示例', wendangjieshao: '演示拖拽 .docx 自动建档与首版历史；附件为通用指引文件。' },
+  { id: 9, wendangmingcheng: 'PPT 拖拽导入示例', wendangjieshao: '演示拖拽 .pptx 自动建档与格式徽章；附件为通用汇报文件。' },
+  { id: 10, wendangmingcheng: 'Excel 格式上传示例', wendangjieshao: '演示表格附件归档与下载；附件为通用台账文件。' },
+  { id: 11, wendangmingcheng: 'Excel 检索筛选示例', wendangjieshao: '演示附件文档参与搜索与类型筛选；附件为通用名单文件。' }
 ]
 
 const NOTICES = [
   {
-    id: 11, gonggaobiaoti: '墨页品牌上线：新图标与视觉语言', faburiqi: '2026-11-24',
+    id: 1, gonggaobiaoti: '墨页品牌上线：新图标与视觉语言', faburiqi: '2026-11-24',
     neirong: `<p>平台品牌升级为「墨页」：两字品牌名呼应页面意象，新图标采用薄荷圆角底、折角页文档、环绕轨道与云上传徽章。</p><p>官网与工作台共用同一套设计语言：黑胶囊主按钮、超大黑标题、薄荷网格面板与黑色描边收尾；亮暗双主题可在设置菜单随时切换。</p>`
   },
   {
-    id: 16, gonggaobiaoti: '暗色模式与设置菜单上线', faburiqi: '2026-11-23',
+    id: 6, gonggaobiaoti: '暗色模式与设置菜单上线', faburiqi: '2026-11-23',
     neirong: `<p>右上角齿轮升级为设置菜单：亮暗切换、减少动效、默认视图三项设置本地持久化，菜单末项为后台入口。</p><p>暗色为完整变量层的真暗色，编辑器与表格同步换肤，夜间阅读不再刺眼。</p>`
   },
   {
-    id: 12, gonggaobiaoti: 'Markdown 全链路上线', faburiqi: '2026-11-22',
+    id: 2, gonggaobiaoti: 'Markdown 全链路上线', faburiqi: '2026-11-22',
     neirong: `<p>Markdown 导入、编辑、预览、下载四段打通：.md 拖拽即建档，MdEditor 源码写作，MdPreview 纸张式渲染，一键导出当前内容。</p><p>已有 Markdown 资产可无缝迁入，技术文档与手册从此有安静的安放之处。</p>`
   },
   {
-    id: 13, gonggaobiaoti: '历史版本功能上线', faburiqi: '2026-11-21',
+    id: 3, gonggaobiaoti: '历史版本功能上线', faburiqi: '2026-11-21',
     neirong: `<p>保存自动快照，单文档保留最近 50 版；历史抽屉支持逐版预览正文与一键恢复，恢复前自动快照，确保每次回退都可追溯。</p><p>误删与误改不再不可逆，版本链就是文档的后悔药。</p>`
   },
   {
-    id: 14, gonggaobiaoti: '项目分类功能上线', faburiqi: '2026-11-20',
+    id: 4, gonggaobiaoti: '项目分类功能上线', faburiqi: '2026-11-20',
     neirong: `<p>文档可归属项目，在线文档、Markdown 与 Office 附件跨格式聚合；侧栏实时计数，一键直达项目视图。</p><p>项目筛选与格式筛选、全局搜索可叠加，逐层收窄，沉淀再多也井然有序。</p>`
   },
   {
-    id: 15, gonggaobiaoti: '拖拽导入功能上线', faburiqi: '2026-11-19',
+    id: 5, gonggaobiaoti: '拖拽导入功能上线', faburiqi: '2026-11-19',
     neirong: `<p>文档中心支持整页拖拽：.md 与 Office 文件落页即自动建档，记录格式徽章与首版历史，全程无需点击按钮。</p><p>批量归档旧文件变成一次拖拽的事，迁移成本几乎为零。</p>`
   },
   {
-    id: 1617346367506, gonggaobiaoti: '附件格式支持说明', faburiqi: '2026-11-18',
+    id: 7, gonggaobiaoti: '附件格式支持说明', faburiqi: '2026-11-18',
     neirong: `<p>平台支持 Word、PPT、Excel 三类 Office 附件上传与下载，拖拽导入自动记录格式与首版历史。</p><p>附件文档可与在线正文共存：正文快速浏览，附件深度阅读与离线流转，各取所需。</p>`
   }
 ]

@@ -120,7 +120,7 @@ public class WendangxinxiController {
      */
     @RequestMapping("/save")
     public R save(@RequestBody WendangxinxiEntity wendangxinxi, HttpServletRequest request){
-    	wendangxinxi.setId(new Date().getTime()+new Double(Math.floor(Math.random()*1000)).longValue());
+    	// ID 交由数据库自增（原模板用时间戳+随机数，导致新旧数据 ID 位数不一）
     	//ValidatorUtils.validateEntity(wendangxinxi);
         wendangxinxiService.insert(wendangxinxi);
         return R.ok();
@@ -131,7 +131,7 @@ public class WendangxinxiController {
      */
     @RequestMapping("/add")
     public R add(@RequestBody WendangxinxiEntity wendangxinxi, HttpServletRequest request){
-    	wendangxinxi.setId(new Date().getTime()+new Double(Math.floor(Math.random()*1000)).longValue());
+    	// ID 交由数据库自增（同 save）
     	//ValidatorUtils.validateEntity(wendangxinxi);
         wendangxinxiService.insert(wendangxinxi);
         return R.ok();
